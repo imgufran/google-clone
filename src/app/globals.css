@@ -6,4 +6,8 @@
   .btn {
     @apply bg-[#f8f9fa] text-gray-700 w-36 h-10 rounded-md hover:text-black hover:shadow-md hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring-blue-500 active:ring-blue-500;
   }
+
+  .link {
+    @apply text-sm text-gray-500 hover:underline hover:cursor-pointer
+  }
 }
