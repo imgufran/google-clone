@@ -6,9 +6,11 @@ export default function CountryLookup() {
   const [country, setCountry] = useState("United States");
 
   useEffect(() => {
-    fetch(`https://extreme-ip-lookup.com/json/?key=${process.env.IP_API_KEY}`)
+    fetch(
+      `https://ipapi.co/json/`
+    )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setCountry(data.country_name));
   }, []);
 
   return <div>{country}</div>;
