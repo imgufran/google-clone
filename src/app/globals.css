@@ -10,4 +10,8 @@
   .link {
     @apply text-sm text-gray-500 hover:underline hover:cursor-pointer
   }
+
+  .header-icon {
+    @apply bg-transparent hover:bg-gray-200 p-2 text-4xl rounded-full hover:cursor-pointer
+  }
 }
