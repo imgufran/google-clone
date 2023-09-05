@@ -1,3 +1,5 @@
+import WebSearchResults from "@/components/WebSearchResults";
+
 export default async function WebpageSearchPage({ searchParams }) {
   const res = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.search}`
@@ -9,6 +11,7 @@ export default async function WebpageSearchPage({ searchParams }) {
 
   const data = await res.json();
   const results = data.items;
+
 
   if (!results) {
     return (
@@ -28,5 +31,5 @@ export default async function WebpageSearchPage({ searchParams }) {
     );
   }
 
-  return <>{results && results.map((result) => <h1>{result.title}</h1>)}</>;
+  return <>{results && <WebSearchResults results={data} />}</>;
 }
